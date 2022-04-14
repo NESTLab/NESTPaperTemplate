@@ -13,13 +13,15 @@
 \RequirePackage{garamondx}
 % Math
 \RequirePackage{amsmath}
+\RequirePackage{amsthm} % must come after amsmath
+\RequirePackage{amssymb}
 % Colors, tables, and graphics
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
 \RequirePackage{tikz}
 % Links
-\RequirePackage[hidelinks,pdftex]{hyperref}
+\RequirePackage[hidelinks,pdftex]{hyperref} % must be last
 
 %
 % NEST Lab mention in the footer
@@ -38,8 +40,10 @@
 \renewcommand{\maketitle}{\oldmaketitle\thispagestyle{fancy}}
 
 %
+% Redefine url and href with a nice symbol and no colored box
 %
-%
+\let\oldurl\url
+\renewcommand{\url}[1]{\oldurl{{\small\faExternalLink}\,#1}}
 \let\oldhref\href
 \renewcommand{\href}[2]{\oldhref{#1}{{\small\faExternalLink}\,#2}}
 
