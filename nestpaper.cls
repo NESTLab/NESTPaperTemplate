@@ -14,7 +14,7 @@
 % Math
 \RequirePackage{amsmath}
 \RequirePackage{amsthm} % must come after amsmath
-\RequirePackage{amssymb}
+%\RequirePackage{amssymb}
 % Colors, tables, and graphics
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
