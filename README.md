@@ -16,7 +16,7 @@ Follow the instructions at https://tug.org/fonts/getnonfreefonts/ or do the foll
     $ chmod 755 install-getnonfreefonts
     $ ./install-getnonfreefonts
     $ rm install-getnonfreefonts
-    $ sudo getnonfreefonts --sys --all
+    $ sudo getnonfreefonts --sys --all --refreshmap
 
 #### Linux ####
 
