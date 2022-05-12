@@ -14,12 +14,15 @@
 % Math
 \RequirePackage{amsmath}
 \RequirePackage{amsthm} % must come after amsmath
-%\RequirePackage{amssymb}
 % Colors, tables, and graphics
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
 \RequirePackage{tikz}
+% List environments
+\RequirePackage{enumitem}
+% Listings
+\RequirePackage{listings}
 % Links
 \RequirePackage[hidelinks,pdftex]{hyperref} % must be last
 
@@ -51,6 +54,23 @@
 % E-Mail address
 %
 \newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
+
+%
+% List style
+%
+\setlist{left=0pt}
+
+%
+% Basic listings style
+%
+\lstset{
+  frame=single,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\color{black}\bfseries,
+  identifierstyle=\color{black},
+  commentstyle=\color{black!55}\itshape
+}
+
 
 %
 % Start the two-column layout
