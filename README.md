@@ -8,6 +8,16 @@ Latex Template
 
 ### Installation ###
 
+#### Installing the necessary fonts ####
+
+Follow the instructions at https://tug.org/fonts/getnonfreefonts/ or do the following:
+
+    $ curl -O https://tug.org/fonts/getnonfreefonts/install-getnonfreefonts
+    $ chmod 755 install-getnonfreefonts
+    $ ./install-getnonfreefonts
+    $ rm install-getnonfreefonts
+    $ sudo getnonfreefonts --sys --all
+
 #### Linux ####
 
     $ mkdir -p ~/.texmf/tex/latex/
