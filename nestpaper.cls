@@ -6,6 +6,7 @@
 % Page layout
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{fancyhdr}
+\usepackage{balance}
 % Fonts
 \RequirePackage{fontawesome}
 \RequirePackage[T1]{fontenc}
