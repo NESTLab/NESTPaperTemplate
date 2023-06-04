@@ -6,11 +6,13 @@
 % Page layout
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage{fancyhdr}
+\RequirePackage{balance}
 % Fonts
 \RequirePackage{fontawesome}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[urw-garamond]{mathdesign}
 \RequirePackage{garamondx}
+\RequirePackage{FiraMono}
 % Math
 \RequirePackage{amsmath}
 \RequirePackage{amsthm} % must come after amsmath
@@ -54,6 +56,7 @@
 % E-Mail address
 %
 \newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
+\renewcommand{\thanks}[1]{ (\texttt{\href{mailto:#1}{#1}})}
 
 %
 % List style
