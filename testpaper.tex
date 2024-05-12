@@ -1,9 +1,9 @@
 \documentclass{nestpaper}
 
+\usepackage[base]{babel}
 \usepackage{lipsum}
 
-\title{Title%
-  \footnote{Submitted to CONF2022}}
+\title{My Paper Title}
 \author{
   Author 1\\
   Institution 1 \\
@@ -11,6 +11,16 @@
   \email{author1@institution1.edu}
   \and
   Author 2\\
+  Institution 2 \\
+  Address 2 \\
+  \email{author2@institution2.edu}
+  \and
+  Author 3\\
+  Institution 2 \\
+  Address 2 \\
+  \email{author2@institution2.edu}
+  \and
+  Author 4\\
   Institution 2 \\
   Address 2 \\
   \email{author2@institution2.edu}}
@@ -36,6 +46,7 @@
 
 \begin{table}[t]
   \centering
+  \caption{An example table.}
   \begin{tabular}{@{}llr@{}}
     \toprule
     \multicolumn{2}{c}{Item} \\
@@ -52,3 +63,7 @@
 \end{table}
 
 \end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
