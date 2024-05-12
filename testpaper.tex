@@ -1,7 +1,13 @@
 \documentclass{nestpaper}
 
+% This is just to add some dummy text, you can safely remove it
 \usepackage[base]{babel}
 \usepackage{lipsum}
+% Make lipsum text gray
+\setlipsum{%
+  par-before = \begingroup\color{gray},
+  par-after = \endgroup
+}
 
 \title{My Paper Title}
 \author{
@@ -27,14 +33,18 @@
 
 \begin{document}
 
+\docversion{1.0 alpha}
+\submitted{Some conference 2024}
+\published{Hopefully the same conference 2024}
+
 \maketitle
 
 \begin{abstract}
-    This is the abstract
+\lipsum[1]
 \end{abstract}
 
 \section{First}
-\lipsum[1-8]
+\lipsum[1-6]
 
 \section{Second}
 \lipsum[9]
@@ -62,7 +72,20 @@
   \end{tabular}
 \end{table}
 
+\section{Useful Commands}
+\begin{itemize}
+\item You can use \verb|\argos| to correctly typeset \argos.
+\item You can cite the paper using either \verb|\citet{}|, and you get \citet{Pinciroli:SI2012}, or \verb|\citep{}|, and you get \citep{Pinciroli:SI2012}.
+\end{itemize}
+
+%
+% Bibliography
+%
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
 \end{document}
+
 %%% Local Variables:
 %%% mode: LaTeX
 %%% TeX-master: t

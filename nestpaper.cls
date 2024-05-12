@@ -9,10 +9,13 @@
 \RequirePackage{balance}
 % Fonts
 \RequirePackage{fontawesome}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[urw-garamond]{mathdesign}
-\RequirePackage{garamondx}
+%\RequirePackage[T1]{fontenc}
+%\RequirePackage[urw-garamond]{mathdesign}
+% \RequirePackage{garamondx}
+\RequirePackage{ebgaramond}
 \RequirePackage{FiraMono}
+% Citations
+\RequirePackage{natbib}
 % Math
 \RequirePackage{amsmath}
 \RequirePackage{amsthm} % must come after amsmath
@@ -21,35 +24,39 @@
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
 \RequirePackage{tikz}
+% Title formatting
+\RequirePackage{titling}
 % List environments
 \RequirePackage{enumitem}
-% Listings
+% Code listings
 \RequirePackage{listings}
-% To redefine \maketitle
-\RequirePackage{titling}
 % For macros to handle spacing correctly
 \RequirePackage{xspace}
+% Conditional behavior
+\RequirePackage{ifthen}
 % Links
 \RequirePackage[colorlinks=true,allcolors=blue]{hyperref} % must be last
-\AtBeginDocument{
-  \hypersetup{
-    pdfauthor={\@author},
-    pdftitle={\@title}}}
 
 %
 % NEST Lab mention in the footer
 %
-\AtBeginDocument{\pagestyle{fancy}}
-\fancyhf{}
-\fancyfoot[LO,RE]{NEST Lab --- \texttt{https://www.nestlab.net/}}
-\fancyfoot[RO,LE]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{.5pt}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[LO,RE]{NESTLab---\texttt{www.nestlab.net}}
+  \fancyfoot[RO,LE]{\thepage}
+  \ifthenelse{\equal{\@docversion}{}}{}{\fancyfoot[CO,CE]{\texttt{\@docversion}}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{.5pt}
+}
+\AtBeginDocument{\pagestyle{plain}}
 
 %
-% Force the first page to use the fancy headers
+% If defined, display information above the title
 %
-\renewcommand{\maketitlehookd}{\thispagestyle{fancy}}
+\renewcommand{\maketitlehooka}{%
+  \ifthenelse{\equal{\@submitted}{}}{}{Submitted to \textit{\@submitted}\newline}%
+  \ifthenelse{\equal{\@published}{}}{}{Published at \textit{\@published}\newline}%
+}
 
 %
 % Redefine url and href with a nice symbol and no colored box
@@ -93,14 +100,14 @@
 % To typeset ARGoS correctly
 \newcommand{\argos}{ARGoS\xspace}
 
-% \version{Conference Name}
-\newcommand{\@version}{}
-\newcommand{\version}[1]{\gdef\@version{Version #1}}
+% \version{Version information}
+\newcommand{\@docversion}{}
+\newcommand{\docversion}[1]{\gdef\@docversion{#1}}
 
 % \submitted{Conference or Journal Name}
 \newcommand{\@submitted}{}
-\newcommand{\submitted}[1]{\gdef\@submitted{Submitted to #1}}
+\newcommand{\submitted}[1]{\gdef\@submitted{#1}}
 
 % \published{Conference or Journal Name}
 \newcommand{\@published}{}
-\newcommand{\published}[2]{\gdef\@published{Published at #1}}
+\newcommand{\published}[2]{\gdef\@published{#1}}
