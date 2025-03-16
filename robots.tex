@@ -1,0 +1,57 @@
+\tikzset{
+  ground robot right/.pic={
+    % Coordinates
+    \coordinate (-north)   at (0,9.7mm);
+    \coordinate (-south)   at (0,0);
+    \coordinate (-center)   at (4,85mm);
+    \coordinate (-east)    at (2mm,4.85mm);
+    \coordinate (-west)    at (-2mm,4.85mm);
+    \coordinate (-north east)   at (2mm,9.7mm);
+    \coordinate (-north west)   at (-2mm,9.7mm);
+    \coordinate (-south east)   at (2mm,0);
+    \coordinate (-south west)   at (-2mm,0);
+    \coordinate (-antenna) at (2mm,9.7mm);
+    % Wheels
+    \fill[black] (0mm,.7mm) arc[radius=.7mm,start angle=-180,end angle=0];
+    \fill[black] (-2mm,.7mm) arc[radius=.7mm,start angle=-180,end angle=0];
+    % Body
+    \draw[pic actions, line join=round, line cap=round] (2mm,.7mm) arc[x radius=2mm, y radius=6mm, start angle=0, end angle=180] to[out=-10,in=-170] (2mm,.7mm);
+    % Antenna
+    \draw (0,6.7mm) to[out=90,in=180] +(2mm,3mm);
+    \filldraw (-antenna) circle(1pt);
+    % Eyes
+    \filldraw[fill=white] (1mm,4.7mm) circle[radius=.4mm];
+    \filldraw[fill=white] (.2mm,4.7mm) circle[radius=.4mm];
+    % Text
+    \node[below] at (-south) {\tikzpictext};
+  }
+}
+
+\tikzset{
+  ground robot left/.pic={
+    % Coordinates
+    \coordinate (-north)   at (0,9.7mm);
+    \coordinate (-south)   at (0,0);
+    \coordinate (-center)   at (4,85mm);
+    \coordinate (-east)    at (2mm,4.85mm);
+    \coordinate (-west)    at (-2mm,4.85mm);
+    \coordinate (-north east)   at (2mm,9.7mm);
+    \coordinate (-north west)   at (-2mm,9.7mm);
+    \coordinate (-south east)   at (2mm,0);
+    \coordinate (-south west)   at (-2mm,0);
+    \coordinate (-antenna) at (-2mm,9.7mm);
+    % Wheels
+    \fill[black] (-1.4mm,.7mm) arc[radius=.7mm,start angle=-180,end angle=0];
+    \fill[black] (.6mm,.7mm) arc[radius=.7mm,start angle=-180,end angle=0];
+    % Body
+    \draw[pic actions, line join=round, line cap=round] (2mm,.7mm) arc[x radius=2mm, y radius=6mm, start angle=0, end angle=180] to[out=-10,in=-170] (2mm,.7mm);
+    % Antenna
+    \draw (0,6.7mm) to[out=90,in=0] +(-2mm,3mm);
+    \filldraw (-antenna) circle(1pt);
+    % Eyes
+    \filldraw[fill=white] (-1mm,4.7mm) circle[radius=.4mm];
+    \filldraw[fill=white] (-.2mm,4.7mm) circle[radius=.4mm];
+    % Text
+    \node[below] at (-south) {\tikzpictext};
+  }
+}

@@ -78,6 +78,26 @@
 \item You can cite the paper using either \verb|\citet{}|, and you get \citet{Pinciroli:SI2012}, or \verb|\citep{}|, and you get \citep{Pinciroli:SI2012}.
 \end{itemize}
 
+\section{TikZ Support}
+\input{robots}
+If you use TikZ, there are a few custom shapes you can use.
+
+\begin{figure}[t]
+  \centering
+  \usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing}
+  \begin{tikzpicture}
+    % Robots
+    \draw (0,0) pic [fill=nestblue, pic text={blue}] (blue robot) {ground robot right};
+    \draw (2,0) pic [fill=nestred, pic text={red}]  (red robot)  {ground robot left};
+    % Ground
+    \draw[decorate,decoration={random steps,segment length=3pt,amplitude=1pt}] (blue robot-south west) -- (red robot-south east);
+    % WiFi signal
+    \draw[decorate,decoration={expanding waves,segment length=3pt,angle=7}] (blue robot-antenna) to (red robot-antenna);
+  \end{tikzpicture}
+  \caption{Custom TikZ shapes}
+  \label{fig:tikzshapes}
+\end{figure}
+
 %
 % Bibliography
 %
