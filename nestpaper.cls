@@ -94,6 +94,16 @@
 \AtBeginDocument{\twocolumn}
 
 %
+% The NESTLab colors
+%
+\definecolor{nestwhite}{HTML}{FEFEFF}
+\definecolor{nestblack}{HTML}{000807}
+\definecolor{nestgreen}{HTML}{A8C256}
+\definecolor{nestblue} {HTML}{0073AA}
+\definecolor{nestred}  {HTML}{AC2B37}
+
+
+% 
 % Useful commands
 %
 
