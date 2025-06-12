@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{nestpaper}[2022/02/04 NESTLab paper template]
 
-\LoadClass[twoside]{article}
+\LoadClassWithOptions{article}
 
 % Page layout
 \RequirePackage[margin=1in]{geometry}
@@ -9,9 +9,6 @@
 \RequirePackage{balance}
 % Fonts
 \RequirePackage{fontawesome}
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage[urw-garamond]{mathdesign}
-% \RequirePackage{garamondx}
 \RequirePackage{ebgaramond}
 \RequirePackage{FiraMono}
 % Citations
@@ -24,6 +21,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{booktabs}
 \RequirePackage{tikz}
+\RequirePackage{subcaption}
 % Title formatting
 \RequirePackage{titling}
 % List environments
@@ -91,7 +89,7 @@
 %
 % Start the two-column layout
 %
-\AtBeginDocument{\twocolumn}
+%\AtBeginDocument{\twocolumn}
 
 %
 % The NESTLab colors

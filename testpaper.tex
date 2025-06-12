@@ -1,4 +1,7 @@
-\documentclass{nestpaper}
+\documentclass[twocolumn]{nestpaper}
+% If you want two work with a single column
+% In generaļ the options are the same as the standard 'article' class
+%\documentclass{nestpaper}
 
 % This is just to add some dummy text, you can safely remove it
 \usepackage[base,latin]{babel}
@@ -33,8 +36,11 @@
 
 \begin{document}
 
+% Document version
 \docversion{1.0 alpha}
+% Use this command to say that this paper was submitted somewhere
 \submitted{Some conference 2024}
+% Use this command to say that this paper was published somewhere
 \published{Hopefully the same conference 2024}
 
 \maketitle
@@ -75,7 +81,7 @@
 \section{Useful Commands}
 \begin{itemize}
 \item You can use \verb|\argos| to correctly typeset \argos.
-\item You can cite the paper using either \verb|\citet{}|, and you get \citet{Pinciroli:SI2012}, or \verb|\citep{}|, and you get \citep{Pinciroli:SI2012}.
+\item This style uses \verb|natbib| to handle citations. You can cite a paper using either \verb|\citet{}|, and you get \citet{Pinciroli:SI2012}, or \verb|\citep{}|, and you get \citep{Pinciroli:SI2012}.
 \end{itemize}
 
 \section{TikZ Support}
