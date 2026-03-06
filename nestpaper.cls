@@ -11,11 +11,17 @@
 \RequirePackage{fontawesome}
 \RequirePackage{ebgaramond}
 \RequirePackage{FiraMono}
+\RequirePackage{dsfont}
 % Citations
 \RequirePackage{natbib}
 % Math
 \RequirePackage{amsmath}
+\RequirePackage{amssymb}
 \RequirePackage{amsthm} % must come after amsmath
+\RequirePackage{mathtools}
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 % Colors, tables, and graphics
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
@@ -24,8 +30,10 @@
 \RequirePackage{subcaption}
 % Title formatting
 \RequirePackage{titling}
+% Section and paragraph title formatting
+\RequirePackage{titlesec}
 % List environments
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 % Code listings
 \RequirePackage{listings}
 % For macros to handle spacing correctly
@@ -57,10 +65,20 @@
 }
 
 %
+% Blind footnote: an unmarked footnote
+%
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+%
 % Redefine url and href with a nice symbol and no colored box
 %
 \let\oldurl\url
-\renewcommand{\url}[1]{\oldurl{{\small\faExternalLink}\,#1}}
+\renewcommand{\url}[1]{{\small\faExternalLink}\,\oldurl{#1}}
 \let\oldhref\href
 \renewcommand{\href}[2]{\oldhref{#1}{{\small\faExternalLink}\,#2}}
 
@@ -73,7 +91,10 @@
 %
 % List style
 %
-\setlist{left=0pt}
+\setlist{left=0pt,nosep}
+\setlist[description]{font=\normalfont\itshape\textbullet\space}
+\newlist{inparaenum}{enumerate*}{1}
+\setlist[inparaenum]{label=\emph{\alph*)}, before=\unskip{: }, after=\unskip{.}, itemjoin={{; }}, itemjoin*={{; and }}}
 
 %
 % Basic listings style
@@ -85,6 +106,11 @@
   identifierstyle=\color{black},
   commentstyle=\color{black!55}\itshape
 }
+
+%
+% Add a . after the paragraph title
+%
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}[.]
 
 %
 % Start the two-column layout
@@ -104,6 +130,9 @@
 % 
 % Useful commands
 %
+
+% To include the ORCID number
+\newcommand{\orcidID}[1]{\unskip$^{[#1]}$}
 
 % To typeset ARGoS correctly
 \newcommand{\argos}{ARGoS\xspace}
