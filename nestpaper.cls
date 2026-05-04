@@ -71,6 +71,9 @@
   \ifthenelse{\equal{\@submitted}{}}{}{Submitted to \textit{\@submitted}\newline}%
   \ifthenelse{\equal{\@published}{}}{}{Published at \textit{\@published}\newline}%
 }
+% Make the title large and bold
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}}
 
 %
 % Blind footnote: an unmarked footnote
