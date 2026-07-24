@@ -103,7 +103,7 @@
 % List style
 %
 \setlist{left=0pt,nosep}
-\setlist[description]{font=\normalfont\itshape\textbullet\space}
+\setlist[description]{font=\normalfont\bfseries\textbullet\space}
 \newlist{inparaenum}{enumerate*}{1}
 \setlist[inparaenum]{label=\emph{\alph*)}, before=\unskip{: }, after=\unskip{.}, itemjoin={{; }}, itemjoin*={{; and }}}
 
